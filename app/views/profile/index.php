@@ -16,10 +16,29 @@
         <div class="field-value"><?= ucfirst(htmlspecialchars($user['role'])) ?></div>
     </div>
 
+    <?php if ($user['role'] === 'student' && $student): ?>
     <div class="profile-field">
-        <div class="field-label">level</div>
-        <div class="field-value"><?= ucfirst(htmlspecialchars($user['level'])) ?></div>
+        <div class="field-label">Surf Level</div>
+        <div class="field-value">
+            <?php
+                $levelColors = [
+                    'Beginner'     => '#10B981',
+                    'Intermediate' => '#F97316',
+                    'Advanced'     => '#0EA5E9',
+                ];
+                $color = $levelColors[$student['level']] ?? '#64748B';
+            ?>
+            <span class="badge" style="background: <?= $color ?>;">
+                <?= htmlspecialchars($student['level']) ?>
+            </span>
+        </div>
     </div>
+
+    <div class="profile-field">
+        <div class="field-label">Country</div>
+        <div class="field-value"><?= htmlspecialchars($student['country'] ?: '—') ?></div>
+    </div>
+    <?php endif; ?>
 
     <div class="profile-field">
         <div class="field-label">Account Status</div>

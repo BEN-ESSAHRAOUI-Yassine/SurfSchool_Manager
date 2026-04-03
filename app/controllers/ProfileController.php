@@ -4,14 +4,23 @@ class ProfileController extends BaseController {
 
     public function index() {
         Security::requireLogin();
-        $user = $_SESSION['user'];
-        $this->render('profile/index', compact('user'));
+        $user    = $_SESSION['user'];
+        // Load student record (level, country) if the user is a student
+        $student = null;
+        if ($user['role'] === 'student') {
+            $student = (new Student())->findByUserId($user['id_user']);
+        }
+        $this->render('profile/index', compact('user', 'student'));
     }
 
     public function edit() {
         Security::requireLogin();
-        $user = $_SESSION['user'];
-        $this->render('profile/edit', compact('user'));
+        $user    = $_SESSION['user'];
+        $student = null;
+        if ($user['role'] === 'student') {
+            $student = (new Student())->findByUserId($user['id_user']);
+        }
+        $this->render('profile/edit', compact('user', 'student'));
     }
 
     public function update() {
@@ -39,6 +48,14 @@ class ProfileController extends BaseController {
             $userModel->updateWithPassword($id, $name, password_hash($_POST['password'], PASSWORD_DEFAULT));
         } else {
             $userModel->updateName($id, $name);
+        }
+
+        // If student, also update level and country
+        if ($_SESSION['user']['role'] === 'student') {
+            $allowedLevels = ['Beginner', 'Intermediate', 'Advanced'];
+            $level   = in_array($_POST['level'] ?? '', $allowedLevels) ? $_POST['level'] : 'Beginner';
+            $country = Security::sanitize($_POST['country'] ?? '');
+            (new Student())->updateLevel($id, $level, $country);
         }
 
         // Refresh session data so header shows new name
