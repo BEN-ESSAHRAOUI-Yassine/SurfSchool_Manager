@@ -2,7 +2,7 @@
 
 session_start();
 
-define('BASE_URL', '/SurfSchool-Manager-PRJ/public/');
+define('BASE_URL', '/SurfSchool-Manager/public/');
 define('ROOT', dirname(__DIR__));
 define('APP',  ROOT . '/app');
 define('VIEW', APP . '/views');
