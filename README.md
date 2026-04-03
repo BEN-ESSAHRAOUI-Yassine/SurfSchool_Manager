@@ -167,6 +167,10 @@ http://localhost/SurfSchool-Manager/public/
 
 ## Database Design
 
+### DB Diagram
+
+![DB Diagram Screenshot](public/assets/imgs/DB_Class_diagram.png)
+
 ### Tables
 - **users**: stores credentials, roles (Admin/Surfer), status
 - **students**: stores student info and skill levels
@@ -203,20 +207,20 @@ You can use the following pre-seeded accounts to test the application:
 
 ### Dashboard
 
-![Dashboard Screenshot](Assets/imgs/dashboard.png)
+![Dashboard Screenshot](public/assets/imgs/DashboardAdmin.png)
 
 ### Users Panel for admin only
 
-![Users Panel Screenshot](Assets/imgs/user-panel.png)
+![Users Panel Screenshot](public/assets/imgs/UserAdmin.png)
 
 ### lesson Panel for admin only
 
-![lesson Panel Screenshot](Assets/imgs/category-panel.png)
+![lesson Panel Screenshot](public/assets/imgs/LessonAdmin.png)
 
 ### enrollment Panel for admin only
 
-![enrollment Panel Screenshot](Assets/imgs/category-panel.png)
+![enrollment Panel Screenshot](public/assets/imgs/EnrollAdmin.png)
 
 ### dashboard Panel for student
 
-![Dashstudent Panel Screenshot](Assets/imgs/category-panel.png)
+![Dashstudent Panel Screenshot](public/assets/imgs/DashboardStudent.png)
