@@ -17,6 +17,11 @@
     </div>
 
     <div class="profile-field">
+        <div class="field-label">level</div>
+        <div class="field-value"><?= ucfirst(htmlspecialchars($user['level'])) ?></div>
+    </div>
+
+    <div class="profile-field">
         <div class="field-label">Account Status</div>
         <div class="field-value">
             <span class="badge <?= $user['status'] === 'Enabled' ? 'badge-enabled' : 'badge-disabled' ?>">
