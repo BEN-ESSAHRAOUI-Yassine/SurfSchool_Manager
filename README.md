@@ -127,10 +127,12 @@ http://localhost/SurfSchool-Manager/public/
         └── 📁css
             ├── style.css
         └── 📁imgs
-            ├── Class_diagram.drawio
-            ├── Class_diagram.png
-            ├── DB Class_diagram.png
-    ├── .htaccess
+            ├── DashboardAdmin.png
+            ├── DashboardStudent.png
+            ├── DB_Class_diagram.png
+            ├── EnrollAdmin.png
+            ├── LessonAdmin.png
+            └── UserAdmin.png
     └── index.php
 ```
 ---
