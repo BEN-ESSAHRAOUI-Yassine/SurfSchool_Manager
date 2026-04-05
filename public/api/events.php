@@ -5,7 +5,7 @@ session_start();
 
 define('ROOT', dirname(__DIR__, 2));
 define('APP',  ROOT . '/app');
-define('BASE_URL', '/SurfSchool-Manager-PRJ/public/');
+define('BASE_URL', '/SurfSchool-Manager/public/');
 
 // Only logged-in users can fetch calendar events
 if (!isset($_SESSION['user'])) {
